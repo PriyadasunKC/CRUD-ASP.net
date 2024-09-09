@@ -1,1 +1,8 @@
-<p>students works!</p>
+
+@for (item of (students$ | async); track $index) {
+    <div>Id : {{item.id}}</div>
+    <div>Name : {{item.name}}</div>
+    <div>Address: {{item.address}}</div>
+    <div>Phone number : {{item.phoneNumber}}</div>
+    <div>Emaill : {{item.email}}</div>
+}

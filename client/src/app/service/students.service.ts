@@ -10,5 +10,5 @@ export class StudentsService {
 
   constructor(private http:HttpClient) { }
 
-  getStudents=():Observable<Students[]> => this.http.get<Students[]>("http://localhost:5229/api/students")
+  getStudents=():Observable<Students[]> => this.http.get<Students[]>("http://localhost:5229/api/student")
 }
