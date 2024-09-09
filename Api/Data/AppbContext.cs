@@ -7,6 +7,6 @@ namespace Api.Data {
         {
             
         }
-        public DbSet<Models.Student> Students{ get; set; }
+        public DbSet<Student> Students{ get; set; }
     }
 }

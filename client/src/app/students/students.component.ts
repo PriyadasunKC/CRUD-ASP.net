@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
-import { StudentsService } from './../service/students.service';
 import { Component, inject, OnInit } from '@angular/core';
+import { StudentsService } from '../service/students.service';
+import { Observable } from 'rxjs';
 import { Students } from '../types/student';
 
 @Component({
@@ -10,27 +10,22 @@ import { Students } from '../types/student';
   templateUrl: './students.component.html',
   styleUrl: './students.component.css'
 })
-export class StudentsComponent implements OnInit{
 
+export class StudentsComponent implements OnInit {
 
-  students!:Observable<Students[]>
+  students!: Observable<Students[]>;
+  studentService = inject(StudentsService);
 
-  studentsService = inject(StudentsService);
-  
-  
   ngOnInit(): void {
-    this.studentsService.getStudents()
-      .subscribe(
-        {
-          next:(response)=> {
-            console.log(response);
-          }
-        }
-        ,
-        error:(err) => {
+   
+    this.studentService.getStudents() 
+      .subscribe({
+        next: (response) => { 
+          console.log(response);
+        },
+        error: (err) => { 
           console.log(err);
         }
-        
-      )
+      });
   }
 }
