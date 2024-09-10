@@ -24,8 +24,6 @@
 
                                 </h4>
                             </div>
-
-
                         </div>
 
                         <div class="gap-2 mt-2 mb-1">
@@ -59,7 +57,7 @@
                 </div>
 
                 <div class="">
-                    <button
+                    <a [routerLink]="['/students/',item.id]"
                         class="flex items-center gap-2 text-white bg-blue-500 hover:bg-blue-400 p-2 rounded-md w-[100px] justify-center mb-2">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -70,7 +68,7 @@
                                 d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                         </svg>
                         Edit
-                    </button>
+                    </a>
 
                     <button
                         class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-400 p-2 rounded-md w-[100px] justify-center">

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Skill set\\Student-Details-Record-System\\Api\\Api.csproj": {}
+    "E:\\Skill set\\Student-Details-Record-System\\api\\Api.csproj": {}
   },
   "projects": {
-    "E:\\Skill set\\Student-Details-Record-System\\Api\\Api.csproj": {
+    "E:\\Skill set\\Student-Details-Record-System\\api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Skill set\\Student-Details-Record-System\\Api\\Api.csproj",
+        "projectUniqueName": "E:\\Skill set\\Student-Details-Record-System\\api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "E:\\Skill set\\Student-Details-Record-System\\Api\\Api.csproj",
+        "projectPath": "E:\\Skill set\\Student-Details-Record-System\\api\\Api.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "E:\\Skill set\\Student-Details-Record-System\\Api\\obj\\",
+        "outputPath": "E:\\Skill set\\Student-Details-Record-System\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
