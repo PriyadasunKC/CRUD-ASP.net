@@ -8,8 +8,8 @@
         placeholder="Phone Number">
     <input formControlName="email" type="email" class="border w-full my-2 p-2 rounded-md shadow-sm" placeholder="Email">
     
-    <a 
-        class="bg-blue-500 text-white rounded-md shadow-md p-2 w-[70px] hover:bg-blue-400 flex justify-center items-center cursor-pointer">Save</a>
+    <button 
+        class="bg-blue-500 text-white rounded-md shadow-md p-2 w-[70px] hover:bg-blue-400 flex justify-center items-center cursor-pointer">Save</button>
     <a [routerLink]="'/students'"
         class="bg-red-500 text-white rounded-md shadow-md  p-2 w-[70px] hover:bg-red-400 flex justify-center items-center cursor-pointer">Cancel</a>
     {{form.value | json}}
