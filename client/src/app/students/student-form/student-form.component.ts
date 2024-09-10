@@ -1,8 +1,9 @@
 import { StudentsService } from './../../service/students.service';
 import { JsonPipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-student-form',
@@ -13,12 +14,20 @@ import { RouterLink } from '@angular/router';
 })
 export class StudentFormComponent implements OnInit {
   form!:FormGroup;
-  StudentsService = inject(StudentsService);
-  constructor(private fb:FormBuilder){
+  studentformSubscription!:Subscription;
+  
+  studentsService = inject(StudentsService);
+  
+  constructor(private fb:FormBuilder , private activatedRouter:ActivatedRoute){
+  }
+
+
+  ngOnDestroy(): void {
+    this.studentformSubscription.unsubscribe();
   }
 
   onSubmit() {
-    this.StudentsService.addStudent(this.form.value).subscribe({
+    this.studentsService.addStudent(this.form.value).subscribe({
       next:(response)=> {
         console.log(response)
       },
@@ -29,11 +38,19 @@ export class StudentFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRouter.params.subscribe({
+      next:(response)=> {
+        console.log(response['id']);
+      },
+      error:(err)=> {
+        console.log(err)
+      }
+    })
     this.form = this.fb.group({
-      name:[],
+      name:['',Validators.required],
       address:[],
       phoneNumber:[],
-      email:[]
+      email:['',Validators.email]
     });
   }
 }
