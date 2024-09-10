@@ -8,10 +8,11 @@ import { Students } from '../types/student';
 })
 export class StudentsService {
 
-  apiUrl = "http://localhost:5229/api/student";
+  apiUrl = "http://localhost:5229/api/Student";
   
   constructor(private http:HttpClient) { }
 
   getStudents=():Observable<Students[]> => this.http.get<Students[]>(this.apiUrl)
   addStudent=(data:Students)=> this.http.post(this.apiUrl,data)
+
 }

@@ -46,6 +46,7 @@ export class StudentFormComponent implements OnInit {
         console.log(err)
       }
     })
+    
     this.form = this.fb.group({
       name:['',Validators.required],
       address:[],
