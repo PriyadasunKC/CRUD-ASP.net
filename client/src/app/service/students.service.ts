@@ -13,6 +13,8 @@ export class StudentsService {
   constructor(private http:HttpClient) { }
 
   getStudents=():Observable<Students[]> => this.http.get<Students[]>(this.apiUrl)
-  addStudent=(data:Students)=> this.http.post(this.apiUrl,data)
-
+  addStudent=(data:Students)=> this.http.post(this.apiUrl,data);
+  getStudent=(id:number):Observable<Students>=> this.http.get<Students>(this.apiUrl+'/'+id);
+  deleteStudent=(id:number)=> this.http.delete(this.apiUrl+'/'+id);
+  editStudent=(id:number,data:Students)=> this.http.put(this.apiUrl+'/'+id,data);
 }

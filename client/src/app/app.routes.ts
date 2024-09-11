@@ -9,6 +9,10 @@ export const routes: Routes = [
     }
     ,
     {
+        path: 'student/form',
+        component:StudentFormComponent
+    },
+    {
         path: 'students/:id',
         component:StudentFormComponent
     }

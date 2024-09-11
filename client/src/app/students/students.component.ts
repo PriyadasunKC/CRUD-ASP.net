@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Students } from '../types/student';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-students',
@@ -17,11 +19,27 @@ import { RouterLink } from '@angular/router';
 export class StudentsComponent implements OnInit {
 
   students$!:Observable<Students[]>;
+  toasterService = inject(ToastrService);
   studentService = inject(StudentsService);
 
+
   ngOnInit(): void {
-   
-    this.students$=this.studentService.getStudents() 
-      
+    this.getStudents();
+  }
+
+  deleteStudent(id:number) {
+    this.studentService.deleteStudent(id).subscribe({
+      next:(response)=> {
+        this.toasterService.success('Student deleted successfully');
+        this.getStudents();
+      },
+      error:(err)=> {
+        console.log(err);
+      }
+    })
+  }
+
+  private getStudents():void {
+    this.students$ = this.studentService.getStudents();
   }
 }

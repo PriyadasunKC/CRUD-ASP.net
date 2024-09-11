@@ -1,4 +1,6 @@
 <form [formGroup]="form" class="shadow w-1/2 mx-auto p-10 rounded-md" (ngSubmit)="onSubmit()">
+    <h1 class="text-xl">{{isEdit ? 'Edit: student' : 'Add Student'}}</h1>
+    
     <div>
         <input formControlName="name" for type="text" class="border w-full my-2 p-2 rounded-md shadow-sm"
             placeholder="Name">
@@ -23,8 +25,12 @@
         }
     </div>
 
-    <button
-        class="bg-blue-500 text-white rounded-md shadow-md p-2 w-[70px] hover:bg-blue-400 flex justify-center items-center cursor-pointer">Save</button>
-    <a [routerLink]="'/students'"
-        class="bg-red-500 text-white rounded-md shadow-md  p-2 w-[70px] hover:bg-red-400 flex justify-center items-center cursor-pointer">Cancel</a>
+    <div class="flex flex-col-2 gap-5 mt-5">
+<button
+    class="bg-blue-500 text-white rounded-md shadow-md p-2 w-[70px] hover:bg-blue-400 flex justify-center items-center cursor-pointer">{{isEdit
+    ? 'Update' : 'Save'}}</button>
+<a [routerLink]="'/students'"
+    class="bg-red-500 text-white rounded-md shadow-md  p-2 w-[70px] hover:bg-red-400 flex justify-center items-center cursor-pointer">Cancel</a>
+    </div>
+    
 </form>
