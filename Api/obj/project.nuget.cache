@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jw4PQkAnHUg=",
+  "dgSpecHash": "xxnTLV6muYY=",
   "success": true,
-  "projectFilePath": "E:\\Skill set\\Student-Details-Record-System\\api\\Api.csproj",
+  "projectFilePath": "E:\\Skill set\\Student-Details-Record-System\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
